@@ -21,7 +21,7 @@ gap: 10px;
 export const InputContent = styled.div`
 display:flex;
 flex-direction:column;
-`
+`;
 export const Label = styled.label``;
 
 export const Input = styled.input`

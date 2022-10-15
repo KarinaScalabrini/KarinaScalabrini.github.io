@@ -2,7 +2,6 @@ import React,{useState, useEffect} from "react";
 import Form from "./components/form";
 import Header from "./components/header";
 import Resume from "./components/Resume";
-
 import GlobalStyle from "./style/global";
 
 const App = () => {
@@ -10,6 +9,8 @@ const App = () => {
     const [transactionsList, setTransactionsList] = useState(data ? JSON.parse(data) : []
     );
     const [income, setIncome] = useState(0);
+    const [expense, setExpense] = useState(0);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
         const amountExpense = transactionsList
@@ -32,6 +33,10 @@ const App = () => {
 
     const handleAdd = (transaction) => {
         const newArrayTransactions = [...transactionsList, transaction];
+        
+        setTransactionsList(newArrayTransactions);
+
+        localStorage.setItem("transactions", JSON.stringify(newArrayTransactions));
     };
 
 
@@ -39,7 +44,9 @@ const App = () => {
         <>
             <Header/>
             <Resume income={income} expense={expense} total={total}/>
-            <Form/>
+            <Form handleAdd={handleAdd} 
+            transactionsList={transactionsList}
+            setTransactionsList={setTransactionsList}/>
             <GlobalStyle />
         </>
          

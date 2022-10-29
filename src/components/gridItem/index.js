@@ -1,10 +1,8 @@
 import React from "react";
 import * as C from "./style";
-// import {
-//     FaRegArrowAltCircleUp,
-//     FaRegArrowAltCircleDown,
-//     FaTrash,
-// } from "react-icons/fa";
+
+
+
 
 const GridItem = ({item, onDelete}) => {
     return (

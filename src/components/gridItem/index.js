@@ -11,14 +11,14 @@ const GridItem = ({item, onDelete}) => {
             <C.Td>{item.amount}</C.Td>
             <C.Td alignCenter>
                 {item.expense ? (
-                    <a color="red"/>
+                    <p color="red">Saída</p>
                 ) : (
-                    <a color="green" />
+                    <p color="green" >Entrada</p>
                 )}
             </C.Td>
-            <C.Td alignCenter
-                onclick={() => onDelete(item.id)}>x 
-            </C.Td>
+            {/* <C.Td alignCenter
+                onclick={() => onDelete(item.id)}>X
+            </C.Td> */}
         </C.Tr>
     );
 };
